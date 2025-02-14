@@ -10,7 +10,6 @@
  * Do not edit the class manually.
  */
 
-
 package org.openapitools.client.api;
 
 import org.openapitools.client.ApiCallback;
@@ -25,7 +24,6 @@ import org.openapitools.client.ProgressResponseBody;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-
 
 import org.openapitools.client.model.ApiErrorResponse;
 import org.openapitools.client.model.QueryEntityWithRelations;
@@ -77,29 +75,47 @@ public class DynamicApi {
 
     /**
      * Build call for modelFilterDelete
-     * @param model Model Name (required)
-     * @param filter Filter conditions (required)
+     * 
+     * @param model     Model Name (required)
+     * @param filter    Filter conditions (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelFilterDeleteCall(String model, QueryQueryFilter filter, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call modelFilterDeleteCall(String model, QueryQueryFilter filter, final ApiCallback _callback)
+            throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -109,7 +125,7 @@ public class DynamicApi {
 
         // create path and map variables
         String localVarPath = "/{model}/filter"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -118,7 +134,7 @@ public class DynamicApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -126,19 +142,22 @@ public class DynamicApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+                "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelFilterDeleteValidateBeforeCall(String model, QueryQueryFilter filter, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelFilterDeleteValidateBeforeCall(String model, QueryQueryFilter filter,
+            final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelFilterDelete(Async)");
@@ -156,18 +175,36 @@ public class DynamicApi {
     /**
      * Delete multiple entities
      * Delete multiple entities that match the provided query expression
-     * @param model Model Name (required)
+     * 
+     * @param model  Model Name (required)
      * @param filter Filter conditions (required)
      * @return Map&lt;String, Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public Map<String, Object> DeleteWhere(String model, QueryQueryFilter filter) throws ApiException {
         ApiResponse<Map<String, Object>> localVarResp = modelFilterDeleteWithHttpInfo(model, filter);
@@ -177,78 +214,142 @@ public class DynamicApi {
     /**
      * Delete multiple entities
      * Delete multiple entities that match the provided query expression
-     * @param model Model Name (required)
+     * 
+     * @param model  Model Name (required)
      * @param filter Filter conditions (required)
      * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public ApiResponse<Map<String, Object>> modelFilterDeleteWithHttpInfo(String model, QueryQueryFilter filter) throws ApiException {
+    public ApiResponse<Map<String, Object>> modelFilterDeleteWithHttpInfo(String model, QueryQueryFilter filter)
+            throws ApiException {
         okhttp3.Call localVarCall = modelFilterDeleteValidateBeforeCall(model, filter, null);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Map<String, Object>>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Delete multiple entities (asynchronously)
      * Delete multiple entities that match the provided query expression
-     * @param model Model Name (required)
-     * @param filter Filter conditions (required)
+     * 
+     * @param model     Model Name (required)
+     * @param filter    Filter conditions (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelFilterDeleteAsync(String model, QueryQueryFilter filter, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call modelFilterDeleteAsync(String model, QueryQueryFilter filter,
+            final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = modelFilterDeleteValidateBeforeCall(model, filter, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Map<String, Object>>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelFilterPost
-     * @param model Model name (required)
-     * @param filter Filter conditions (required)
-     * @param page Page number (optional, default to 1)
-     * @param pageSize Items per page (optional, default to 10)
-     * @param sort Sort field and direction (e.g., name:asc,age:desc) (optional)
+     * 
+     * @param model     Model name (required)
+     * @param filter    Filter conditions (required)
+     * @param page      Page number (optional, default to 1)
+     * @param pageSize  Items per page (optional, default to 10)
+     * @param sort      Sort field and direction (e.g., name:asc,age:desc)
+     *                  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelFilterPostCall(String model, QueryQueryFilter filter, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call modelFilterPostCall(String model, QueryQueryFilter filter, Integer page, Integer pageSize,
+            String sort, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -258,7 +359,7 @@ public class DynamicApi {
 
         // create path and map variables
         String localVarPath = "/{model}/filter"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -279,7 +380,7 @@ public class DynamicApi {
         }
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -287,19 +388,22 @@ public class DynamicApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+                "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelFilterPostValidateBeforeCall(String model, QueryQueryFilter filter, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelFilterPostValidateBeforeCall(String model, QueryQueryFilter filter, Integer page,
+            Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelFilterPost(Async)");
@@ -316,121 +420,212 @@ public class DynamicApi {
 
     /**
      * Filter entities
-     * Filter entities using complex conditions including field expressions, logical operations, and relationship filtering
-     * @param model Model name (required)
-     * @param filter Filter conditions (required)
-     * @param page Page number (optional, default to 1)
+     * Filter entities using complex conditions including field expressions, logical
+     * operations, and relationship filtering
+     * 
+     * @param model    Model name (required)
+     * @param filter   Filter conditions (required)
+     * @param page     Page number (optional, default to 1)
      * @param pageSize Items per page (optional, default to 10)
-     * @param sort Sort field and direction (e.g., name:asc,age:desc) (optional)
+     * @param sort     Sort field and direction (e.g., name:asc,age:desc) (optional)
      * @return QueryFilterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public QueryFilterResponse GetWhere(String model, QueryQueryFilter filter, Integer page, Integer pageSize, String sort) throws ApiException {
-        ApiResponse<QueryFilterResponse> localVarResp = modelFilterPostWithHttpInfo(model, filter, page, pageSize, sort);
+    public QueryFilterResponse GetWhere(String model, QueryQueryFilter filter, Integer page, Integer pageSize,
+            String sort) throws ApiException {
+        ApiResponse<QueryFilterResponse> localVarResp = modelFilterPostWithHttpInfo(model, filter, page, pageSize,
+                sort);
         return localVarResp.getData();
     }
 
     /**
      * Filter entities
-     * Filter entities using complex conditions including field expressions, logical operations, and relationship filtering
-     * @param model Model name (required)
-     * @param filter Filter conditions (required)
-     * @param page Page number (optional, default to 1)
+     * Filter entities using complex conditions including field expressions, logical
+     * operations, and relationship filtering
+     * 
+     * @param model    Model name (required)
+     * @param filter   Filter conditions (required)
+     * @param page     Page number (optional, default to 1)
      * @param pageSize Items per page (optional, default to 10)
-     * @param sort Sort field and direction (e.g., name:asc,age:desc) (optional)
+     * @param sort     Sort field and direction (e.g., name:asc,age:desc) (optional)
      * @return ApiResponse&lt;QueryFilterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public ApiResponse<QueryFilterResponse> modelFilterPostWithHttpInfo(String model, QueryQueryFilter filter, Integer page, Integer pageSize, String sort) throws ApiException {
+    public ApiResponse<QueryFilterResponse> modelFilterPostWithHttpInfo(String model, QueryQueryFilter filter,
+            Integer page, Integer pageSize, String sort) throws ApiException {
         okhttp3.Call localVarCall = modelFilterPostValidateBeforeCall(model, filter, page, pageSize, sort, null);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Filter entities (asynchronously)
-     * Filter entities using complex conditions including field expressions, logical operations, and relationship filtering
-     * @param model Model name (required)
-     * @param filter Filter conditions (required)
-     * @param page Page number (optional, default to 1)
-     * @param pageSize Items per page (optional, default to 10)
-     * @param sort Sort field and direction (e.g., name:asc,age:desc) (optional)
+     * Filter entities using complex conditions including field expressions, logical
+     * operations, and relationship filtering
+     * 
+     * @param model     Model name (required)
+     * @param filter    Filter conditions (required)
+     * @param page      Page number (optional, default to 1)
+     * @param pageSize  Items per page (optional, default to 10)
+     * @param sort      Sort field and direction (e.g., name:asc,age:desc)
+     *                  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-        <tr><td> 500 </td><td> Internal Server Error </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>500</td>
+     *                        <td>Internal Server Error</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelFilterPostAsync(String model, QueryQueryFilter filter, Integer page, Integer pageSize, String sort, final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
+    public okhttp3.Call modelFilterPostAsync(String model, QueryQueryFilter filter, Integer page, Integer pageSize,
+            String sort, final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = modelFilterPostValidateBeforeCall(model, filter, page, pageSize, sort, _callback);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelFilterPut
-     * @param model Model Name (required)
-     * @param entity Entity Data (required)
+     * 
+     * @param model     Model Name (required)
+     * @param entity    Entity Data (required)
+     * @param filter    filter (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelFilterPutCall(String model, QueryEntityWithRelations entity, QueryQueryFilter filter,final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call modelFilterPutCall(String model, QueryEntityWithRelations entity, QueryQueryFilter filter,
+            final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
         }
 
-       Map<String, Object> localVarPostBody = new HashMap<>();
-localVarPostBody.put("MainEntity", entity.MainEntity);
-localVarPostBody.put("Expressions", filter);
-localVarPostBody.put("Relations", entity.Relations);
-            
+        Map<String, Object> localVarPostBody = new HashMap<>();
+        localVarPostBody.put("MainEntity", entity.MainEntity);
+        localVarPostBody.put("expressions", filter.expressions);
+        localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
         String localVarPath = "/{model}/filter"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -439,7 +634,7 @@ localVarPostBody.put("Relations", entity.Relations);
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -447,19 +642,22 @@ localVarPostBody.put("Relations", entity.Relations);
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+                "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelFilterPutValidateBeforeCall(String model, QueryEntityWithRelations entity, final ApiCallback _callback,QueryQueryFilter filter) throws ApiException {
+    private okhttp3.Call modelFilterPutValidateBeforeCall(String model, QueryEntityWithRelations entity,
+            final ApiCallback _callback, QueryQueryFilter filter) throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelFilterPut(Async)");
@@ -469,104 +667,166 @@ localVarPostBody.put("Relations", entity.Relations);
         if (entity == null) {
             throw new ApiException("Missing the required parameter 'entity' when calling modelFilterPut(Async)");
         }
-         if (filter == null) {
+        if (filter == null) {
             throw new ApiException("Missing the required parameter 'filter' when calling modelFilterPut(Async)");
         }
 
-        return modelFilterPutCall(model, entity, _callback,filter);
+        return modelFilterPutCall(model, entity, _callback, filter);
 
     }
 
     /**
      * Update multiple entities
      * Update multiple entities that match the provided query expression
-     * @param model Model Name (required)
+     * 
+     * @param model  Model Name (required)
      * @param entity Entity Data (required)
      * @return Map&lt;String, Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public Map<String, Object> UpdateWhere(String model, QueryEntityWithRelations entity,QueryQueryFilter filter) throws ApiException {
-        ApiResponse<Map<String, Object>> localVarResp = modelFilterPutWithHttpInfo(model, entity,filter);
+    public Map<String, Object> UpdateWhere(String model, QueryEntityWithRelations entity, QueryQueryFilter filter)
+            throws ApiException {
+        ApiResponse<Map<String, Object>> localVarResp = modelFilterPutWithHttpInfo(model, entity, filter);
         return localVarResp.getData();
     }
 
     /**
      * Update multiple entities
      * Update multiple entities that match the provided query expression
-     * @param model Model Name (required)
+     * 
+     * @param model  Model Name (required)
      * @param entity Entity Data (required)
      * @return ApiResponse&lt;Map&lt;String, Object&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public ApiResponse<Map<String, Object>> modelFilterPutWithHttpInfo(String model, QueryEntityWithRelations entity,QueryQueryFilter filter) throws ApiException {
-        okhttp3.Call localVarCall = modelFilterPutValidateBeforeCall(model, entity, null,filter);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+    public ApiResponse<Map<String, Object>> modelFilterPutWithHttpInfo(String model, QueryEntityWithRelations entity,
+            QueryQueryFilter filter) throws ApiException {
+        okhttp3.Call localVarCall = modelFilterPutValidateBeforeCall(model, entity, null, filter);
+        Type localVarReturnType = new TypeToken<Map<String, Object>>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Update multiple entities (asynchronously)
      * Update multiple entities that match the provided query expression
-     * @param model Model Name (required)
-     * @param entity Entity Data (required)
+     * 
+     * @param model     Model Name (required)
+     * @param entity    Entity Data (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelFilterPutAsync(String model, QueryEntityWithRelations entity, final ApiCallback<Map<String, Object>> _callback) throws ApiException {
+    public okhttp3.Call modelFilterPutAsync(String model, QueryEntityWithRelations entity,
+            final ApiCallback<Map<String, Object>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = modelFilterPutValidateBeforeCall(model, entity, _callback);
-        Type localVarReturnType = new TypeToken<Map<String, Object>>(){}.getType();
+        Type localVarReturnType = new TypeToken<Map<String, Object>>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelGet
-     * @param model Model Name (required)
-     * @param page Page number (optional)
-     * @param pageSize Items per page (optional)
-     * @param sort Sort field and direction (e.g., name:asc) (optional)
+     * 
+     * @param model     Model Name (required)
+     * @param page      Page number (optional)
+     * @param pageSize  Items per page (optional)
+     * @param sort      Sort field and direction (e.g., name:asc) (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelGetCall(String model, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call modelGetCall(String model, Integer page, Integer pageSize, String sort,
+            final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -576,7 +836,7 @@ localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
         String localVarPath = "/{model}"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -597,7 +857,7 @@ localVarPostBody.put("Relations", entity.Relations);
         }
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -611,12 +871,15 @@ localVarPostBody.put("Relations", entity.Relations);
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelGetValidateBeforeCall(String model, Integer page, Integer pageSize, String sort, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelGetValidateBeforeCall(String model, Integer page, Integer pageSize, String sort,
+            final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelGet(Async)");
@@ -628,20 +891,35 @@ localVarPostBody.put("Relations", entity.Relations);
 
     /**
      * List and filter entities
-     * Get a list of entities. Use query parameters for simple filtering or POST to /filter for complex conditions
-     * @param model Model Name (required)
-     * @param page Page number (optional)
+     * Get a list of entities. Use query parameters for simple filtering or POST to
+     * /filter for complex conditions
+     * 
+     * @param model    Model Name (required)
+     * @param page     Page number (optional)
      * @param pageSize Items per page (optional)
-     * @param sort Sort field and direction (e.g., name:asc) (optional)
+     * @param sort     Sort field and direction (e.g., name:asc) (optional)
      * @return QueryFilterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public QueryFilterResponse GetAll(String model, Integer page, Integer pageSize, String sort) throws ApiException {
         ApiResponse<QueryFilterResponse> localVarResp = modelGetWithHttpInfo(model, page, pageSize, sort);
@@ -650,76 +928,124 @@ localVarPostBody.put("Relations", entity.Relations);
 
     /**
      * List and filter entities
-     * Get a list of entities. Use query parameters for simple filtering or POST to /filter for complex conditions
-     * @param model Model Name (required)
-     * @param page Page number (optional)
+     * Get a list of entities. Use query parameters for simple filtering or POST to
+     * /filter for complex conditions
+     * 
+     * @param model    Model Name (required)
+     * @param page     Page number (optional)
      * @param pageSize Items per page (optional)
-     * @param sort Sort field and direction (e.g., name:asc) (optional)
+     * @param sort     Sort field and direction (e.g., name:asc) (optional)
      * @return ApiResponse&lt;QueryFilterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public ApiResponse<QueryFilterResponse> modelGetWithHttpInfo(String model, Integer page, Integer pageSize, String sort) throws ApiException {
+    public ApiResponse<QueryFilterResponse> modelGetWithHttpInfo(String model, Integer page, Integer pageSize,
+            String sort) throws ApiException {
         okhttp3.Call localVarCall = modelGetValidateBeforeCall(model, page, pageSize, sort, null);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List and filter entities (asynchronously)
-     * Get a list of entities. Use query parameters for simple filtering or POST to /filter for complex conditions
-     * @param model Model Name (required)
-     * @param page Page number (optional)
-     * @param pageSize Items per page (optional)
-     * @param sort Sort field and direction (e.g., name:asc) (optional)
+     * Get a list of entities. Use query parameters for simple filtering or POST to
+     * /filter for complex conditions
+     * 
+     * @param model     Model Name (required)
+     * @param page      Page number (optional)
+     * @param pageSize  Items per page (optional)
+     * @param sort      Sort field and direction (e.g., name:asc) (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelGetAsync(String model, Integer page, Integer pageSize, String sort, final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
+    public okhttp3.Call modelGetAsync(String model, Integer page, Integer pageSize, String sort,
+            final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = modelGetValidateBeforeCall(model, page, pageSize, sort, _callback);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelIdDelete
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * 
+     * @param model     Model Name (required)
+     * @param id        Entity ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public okhttp3.Call modelIdDeleteCall(String model, String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -729,8 +1055,8 @@ localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
         String localVarPath = "/{model}/{id}"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()))
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()))
+                .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -739,7 +1065,7 @@ localVarPostBody.put("Relations", entity.Relations);
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -753,12 +1079,15 @@ localVarPostBody.put("Relations", entity.Relations);
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelIdDeleteValidateBeforeCall(String model, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelIdDeleteValidateBeforeCall(String model, String id, final ApiCallback _callback)
+            throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelIdDelete(Async)");
@@ -776,17 +1105,31 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Delete an entity
      * Delete an entity by its ID
+     * 
      * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * @param id    Entity ID (required)
      * @return ApiErrorResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public ApiErrorResponse DeleteById(String model, String id) throws ApiException {
         ApiResponse<ApiErrorResponse> localVarResp = modelIdDeleteWithHttpInfo(model, id);
@@ -796,71 +1139,116 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Delete an entity
      * Delete an entity by its ID
+     * 
      * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * @param id    Entity ID (required)
      * @return ApiResponse&lt;ApiErrorResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public ApiResponse<ApiErrorResponse> modelIdDeleteWithHttpInfo(String model, String id) throws ApiException {
         okhttp3.Call localVarCall = modelIdDeleteValidateBeforeCall(model, id, null);
-        Type localVarReturnType = new TypeToken<ApiErrorResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ApiErrorResponse>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Delete an entity (asynchronously)
      * Delete an entity by its ID
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * 
+     * @param model     Model Name (required)
+     * @param id        Entity ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelIdDeleteAsync(String model, String id, final ApiCallback<ApiErrorResponse> _callback) throws ApiException {
+    public okhttp3.Call modelIdDeleteAsync(String model, String id, final ApiCallback<ApiErrorResponse> _callback)
+            throws ApiException {
 
         okhttp3.Call localVarCall = modelIdDeleteValidateBeforeCall(model, id, _callback);
-        Type localVarReturnType = new TypeToken<ApiErrorResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ApiErrorResponse>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelIdGet
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * 
+     * @param model     Model Name (required)
+     * @param id        Entity ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public okhttp3.Call modelIdGetCall(String model, String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -870,8 +1258,8 @@ localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
         String localVarPath = "/{model}/{id}"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()))
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()))
+                .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -880,7 +1268,7 @@ localVarPostBody.put("Relations", entity.Relations);
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -894,12 +1282,15 @@ localVarPostBody.put("Relations", entity.Relations);
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelIdGetValidateBeforeCall(String model, String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelIdGetValidateBeforeCall(String model, String id, final ApiCallback _callback)
+            throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelIdGet(Async)");
@@ -917,17 +1308,31 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Get an entity by ID
      * Retrieve a single entity by its ID
+     * 
      * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * @param id    Entity ID (required)
      * @return QueryFilterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public QueryFilterResponse GetById(String model, String id) throws ApiException {
         ApiResponse<QueryFilterResponse> localVarResp = modelIdGetWithHttpInfo(model, id);
@@ -937,73 +1342,123 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Get an entity by ID
      * Retrieve a single entity by its ID
+     * 
      * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * @param id    Entity ID (required)
      * @return ApiResponse&lt;QueryFilterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public ApiResponse<QueryFilterResponse> modelIdGetWithHttpInfo(String model, String id) throws ApiException {
         okhttp3.Call localVarCall = modelIdGetValidateBeforeCall(model, id, null);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Get an entity by ID (asynchronously)
      * Retrieve a single entity by its ID
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * 
+     * @param model     Model Name (required)
+     * @param id        Entity ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelIdGetAsync(String model, String id, final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
+    public okhttp3.Call modelIdGetAsync(String model, String id, final ApiCallback<QueryFilterResponse> _callback)
+            throws ApiException {
 
         okhttp3.Call localVarCall = modelIdGetValidateBeforeCall(model, id, _callback);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelIdPut
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
-     * @param entity Entity Data (required)
+     * 
+     * @param model     Model Name (required)
+     * @param id        Entity ID (required)
+     * @param entity    Entity Data (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelIdPutCall(String model, String id, QueryEntityWithRelations entity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call modelIdPutCall(String model, String id, QueryEntityWithRelations entity,
+            final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -1013,8 +1468,8 @@ localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
         String localVarPath = "/{model}/{id}"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()))
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()))
+                .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1023,7 +1478,7 @@ localVarPostBody.put("Relations", entity.Relations);
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1031,19 +1486,22 @@ localVarPostBody.put("Relations", entity.Relations);
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+                "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelIdPutValidateBeforeCall(String model, String id, QueryEntityWithRelations entity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelIdPutValidateBeforeCall(String model, String id, QueryEntityWithRelations entity,
+            final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelIdPut(Async)");
@@ -1066,21 +1524,40 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Update an entity
      * Update an existing entity by its ID
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * 
+     * @param model  Model Name (required)
+     * @param id     Entity ID (required)
      * @param entity Entity Data (required)
      * @return QueryFilterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public QueryFilterResponse UpdateById(String model, String id, QueryEntityWithRelations entity) throws ApiException {
+    public QueryFilterResponse UpdateById(String model, String id, QueryEntityWithRelations entity)
+            throws ApiException {
         ApiResponse<QueryFilterResponse> localVarResp = modelIdPutWithHttpInfo(model, id, entity);
         return localVarResp.getData();
     }
@@ -1088,75 +1565,130 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Update an entity
      * Update an existing entity by its ID
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
+     * 
+     * @param model  Model Name (required)
+     * @param id     Entity ID (required)
      * @param entity Entity Data (required)
      * @return ApiResponse&lt;QueryFilterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public ApiResponse<QueryFilterResponse> modelIdPutWithHttpInfo(String model, String id, QueryEntityWithRelations entity) throws ApiException {
+    public ApiResponse<QueryFilterResponse> modelIdPutWithHttpInfo(String model, String id,
+            QueryEntityWithRelations entity) throws ApiException {
         okhttp3.Call localVarCall = modelIdPutValidateBeforeCall(model, id, entity, null);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Update an entity (asynchronously)
      * Update an existing entity by its ID
-     * @param model Model Name (required)
-     * @param id Entity ID (required)
-     * @param entity Entity Data (required)
+     * 
+     * @param model     Model Name (required)
+     * @param id        Entity ID (required)
+     * @param entity    Entity Data (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> OK </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not Found </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>200</td>
+     *                        <td>OK</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>404</td>
+     *                        <td>Not Found</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelIdPutAsync(String model, String id, QueryEntityWithRelations entity, final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
+    public okhttp3.Call modelIdPutAsync(String model, String id, QueryEntityWithRelations entity,
+            final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = modelIdPutValidateBeforeCall(model, id, entity, _callback);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
+
     /**
      * Build call for modelPost
-     * @param model Model Name (required)
-     * @param entity Entity Data (required)
+     * 
+     * @param model     Model Name (required)
+     * @param entity    Entity Data (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>201</td>
+     *                        <td>Created</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelPostCall(String model, QueryEntityWithRelations entity, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call modelPostCall(String model, QueryEntityWithRelations entity, final ApiCallback _callback)
+            throws ApiException {
         String basePath = null;
         // Operation Servers
-        String[] localBasePaths = new String[] {  };
+        String[] localBasePaths = new String[] {};
 
         // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
+        if (localCustomBaseUrl != null) {
             basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
+        } else if (localBasePaths.length > 0) {
             basePath = localBasePaths[localHostIndex];
         } else {
             basePath = null;
@@ -1166,7 +1698,7 @@ localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
         String localVarPath = "/{model}"
-            .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
+                .replace("{" + "model" + "}", localVarApiClient.escapeString(model.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1175,7 +1707,7 @@ localVarPostBody.put("Relations", entity.Relations);
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
-            "application/json"
+                "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -1183,19 +1715,22 @@ localVarPostBody.put("Relations", entity.Relations);
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+                "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        String[] localVarAuthNames = new String[] {};
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams,
+                localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams,
+                localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call modelPostValidateBeforeCall(String model, QueryEntityWithRelations entity, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call modelPostValidateBeforeCall(String model, QueryEntityWithRelations entity,
+            final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'model' is set
         if (model == null) {
             throw new ApiException("Missing the required parameter 'model' when calling modelPost(Async)");
@@ -1213,17 +1748,31 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Create a new entity
      * Create a new entity of the specified model type
-     * @param model Model Name (required)
+     * 
+     * @param model  Model Name (required)
      * @param entity Entity Data (required)
      * @return QueryFilterResponse
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>201</td>
+     *                        <td>Created</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
     public QueryFilterResponse Create(String model, QueryEntityWithRelations entity) throws ApiException {
         ApiResponse<QueryFilterResponse> localVarResp = modelPostWithHttpInfo(model, entity);
@@ -1233,44 +1782,76 @@ localVarPostBody.put("Relations", entity.Relations);
     /**
      * Create a new entity
      * Create a new entity of the specified model type
-     * @param model Model Name (required)
+     * 
+     * @param model  Model Name (required)
      * @param entity Entity Data (required)
      * @return ApiResponse&lt;QueryFilterResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @throws ApiException If fail to call the API, e.g. server error or cannot
+     *                      deserialize the response body
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>201</td>
+     *                        <td>Created</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public ApiResponse<QueryFilterResponse> modelPostWithHttpInfo(String model, QueryEntityWithRelations entity) throws ApiException {
+    public ApiResponse<QueryFilterResponse> modelPostWithHttpInfo(String model, QueryEntityWithRelations entity)
+            throws ApiException {
         okhttp3.Call localVarCall = modelPostValidateBeforeCall(model, entity, null);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Create a new entity (asynchronously)
      * Create a new entity of the specified model type
-     * @param model Model Name (required)
-     * @param entity Entity Data (required)
+     * 
+     * @param model     Model Name (required)
+     * @param entity    Entity Data (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @throws ApiException If fail to process the API call, e.g. serializing the
+     *                      request body object
      * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> Created </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad Request </td><td>  -  </td></tr>
-     </table>
+     *                        <table border="1">
+     *                        <caption>Response Details</caption>
+     *                        <tr>
+     *                        <td>Status Code</td>
+     *                        <td>Description</td>
+     *                        <td>Response Headers</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>201</td>
+     *                        <td>Created</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        <tr>
+     *                        <td>400</td>
+     *                        <td>Bad Request</td>
+     *                        <td>-</td>
+     *                        </tr>
+     *                        </table>
      */
-    public okhttp3.Call modelPostAsync(String model, QueryEntityWithRelations entity, final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
+    public okhttp3.Call modelPostAsync(String model, QueryEntityWithRelations entity,
+            final ApiCallback<QueryFilterResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = modelPostValidateBeforeCall(model, entity, _callback);
-        Type localVarReturnType = new TypeToken<QueryFilterResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<QueryFilterResponse>() {
+        }.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
