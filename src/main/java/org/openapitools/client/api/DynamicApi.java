@@ -73,6 +73,59 @@ public class DynamicApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    public interface WebSocketCallback {
+        void onMessage(String event, String model, JsonObject data);
+    }
+    
+
+    public void listen(String model, String eventType, WebSocketCallback callback) {
+        OkHttpClient client = new OkHttpClient.Builder()
+                .readTimeout(0, TimeUnit.MILLISECONDS)
+                .build();
+
+        String basePath = localVarApiClient.getBasePath().replaceFirst("^http", "ws").replaceFirst("^https", "wss");
+        String url = String.format("%s/ws/%s/%s", basePath, model, eventType);
+
+        Request request = new Request.Builder()
+                .url(url)
+                .addHeader("Authorization", "Bearer " + localVarApiClient.getAccessToken())
+                .build();
+
+        client.newWebSocket(request, new WebSocketListener() {
+            @Override
+            public void onOpen(WebSocket webSocket, Response response) {
+                System.out.println("WebSocket opened: " + response);
+            }
+
+            @Override
+            public void onMessage(WebSocket webSocket, String text) {
+                JsonObject jsonObject = JsonParser.parseString(text).getAsJsonObject();
+                String event = jsonObject.get("event").getAsString();
+                String model = jsonObject.get("model").getAsString();
+                JsonObject data = jsonObject.get("data").getAsJsonObject();
+                callback.onMessage(event, model, data);
+            }
+
+            @Override
+            public void onFailure(WebSocket webSocket, Throwable t, Response response) {
+                System.err.println("WebSocket error: " + t.getMessage());
+            }
+
+            @Override
+            public void onClosing(WebSocket webSocket, int code, String reason) {
+                webSocket.close(1000, null);
+                System.out.println("WebSocket closing: " + reason);
+            }
+
+            @Override
+            public void onClosed(WebSocket webSocket, int code, String reason) {
+                System.out.println("WebSocket closed: " + reason);
+            }
+        });
+
+        client.dispatcher().executorService().shutdown();
+    }
+
     /**
      * Build call for modelFilterDelete
      * 
@@ -620,7 +673,7 @@ public class DynamicApi {
 
         Map<String, Object> localVarPostBody = new HashMap<>();
         localVarPostBody.put("MainEntity", entity.MainEntity);
-        localVarPostBody.put("expressions", filter.expressions);
+        localVarPostBody.put("expressions", filter.getExpressions());
         localVarPostBody.put("Relations", entity.Relations);
 
         // create path and map variables
